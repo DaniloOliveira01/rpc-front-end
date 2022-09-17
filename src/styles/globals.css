@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #363636;
+  --bg-secondary: #8c8c8c;
+
+  --text-primary: #242424;
+  --text-secondary: #585858;
+  --red-violet: #aa18a3;
+}
+
+.dark,
+[data-theme="dark"] {
+  --bg-primary: #131416;
+  --bg-secondary: #1c1c1c;
+
+  --text-primary: #bebebe;
+  --text-secondary: #dedede;
+}
+
+html,
+body {
+  font-family: "Nunito Sans";
+  background-color: var(--bg-primary);
+}
+
+.btn-global {
+  height: 30px;
+  padding: 10px;
+  background-color: #0d31cf;
+  color: #fbfbfb;
+  border-radius: 12px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.box-shadow-global {
+  -webkit-box-shadow: 0px 3px 18px 3px rgba(0,0,0,0.88); 
+  box-shadow: 0px 3px 18px 3px rgba(0,0,0,0.88);
+}
+
