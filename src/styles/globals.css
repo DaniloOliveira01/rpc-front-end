@@ -7,10 +7,10 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #363636;
+  --bg-primary: #4E72A8;
   --bg-secondary: #8c8c8c;
 
-  --text-primary: #242424;
+  --text-primary: #fbfbfb;
   --text-secondary: #585858;
   --red-violet: #aa18a3;
 }
@@ -20,32 +20,13 @@
   --bg-primary: #131416;
   --bg-secondary: #1c1c1c;
 
-  --text-primary: #bebebe;
+  --text-primary: #fbfbfb;
   --text-secondary: #dedede;
 }
 
 html,
 body {
   font-family: "Nunito Sans";
+  color: var(--text-primary);
   background-color: var(--bg-primary);
 }
-
-.btn-global {
-  height: 30px;
-  padding: 10px;
-  background-color: #0d31cf;
-  color: #fbfbfb;
-  border-radius: 12px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.box-shadow-global {
-  -webkit-box-shadow: 0px 3px 18px 3px rgba(0,0,0,0.88); 
-  box-shadow: 0px 3px 18px 3px rgba(0,0,0,0.88);
-}
-
