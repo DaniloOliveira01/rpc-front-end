@@ -3,18 +3,44 @@ import { ITypeCards } from "../../@types";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Sinopse } from "./SinopseDropDown";
 
-export const CardsProgrammes = ({ programmeParse }: ITypeCards) => {
-  const hourAtual = new Date().toLocaleTimeString()
-  const dateAtual = new Date().toLocaleDateString()
+export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) => {
+
+  const newDate = new Date(data).toLocaleDateString('pt-BR')
+
+  function handlePage (nextPage: boolean) {
+    const newNow = new Date(data)
+    if (nextPage) newNow.setDate(newNow.getDate() + 1)
+    if (!nextPage) newNow.setDate(newNow.getDate() - 1)
+
+    const [mes, dia, ano] = newNow.toLocaleDateString("en-US").split('/')
+    const dataFormatted = `${ano}-${mes}-${dia}`
+    setUrl(dataFormatted)
+  }
 
   return (
     <section className="flex flex-col justify-center items-center font-bold p-5">
-      <h1 className="text-[#fbfbfb] text-center md:text-4xl text-2xl mb-5">Confira nossa programação completa:</h1>
+      <h1 className="text-[#fbfbfb] text-center md:text-4xl text-2xl mb-5">
+        Confira nossa programação completa:
+      </h1>
 
       <aside className="flex justify-center items-center gap-3 mb-5">
-        <AiOutlineArrowLeft size={40} color="#fbfbfb" />
-          <span className="text-[#fbfbfb] text-xl">{dateAtual}</span>
-        <AiOutlineArrowRight size={40} color="#fbfbfb" />
+        <AiOutlineArrowLeft
+          className="cursor-pointer"
+          onClick={() => handlePage(false)} 
+          size={40} 
+          color="#fbfbfb" 
+        />
+
+          <span className="text-[#fbfbfb] text-xl">
+            {newDate}
+          </span>
+        
+        <AiOutlineArrowRight
+          className="cursor-pointer"
+          onClick={() => handlePage(true)} 
+          size={40} 
+          color="#fbfbfb" 
+        />
       </aside>
 
       <article className="flex flex-col md:justify-start justify-center items-center gap-3 mb-3">
@@ -47,7 +73,12 @@ export const CardsProgrammes = ({ programmeParse }: ITypeCards) => {
                 </div>
               </article>
             </aside>
-            <Sinopse sinopse={item.description === null || undefined ? "Preparando o seu melhor programa." : item.description} />
+            <Sinopse sinopse={
+              item.description === null || undefined 
+              ? "Preparando o seu melhor programa." 
+              : item.description
+              } 
+            />
           </article>
         ))}
       </article>
