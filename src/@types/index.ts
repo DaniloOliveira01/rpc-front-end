@@ -1,12 +1,16 @@
+import { Dispatch, SetStateAction } from "react"
 export interface ITypeData {
-  title?: string
-  description?: string
-  time_start?: string
-  time_end?: string
-  URL_IMG?: string
+  isLive: boolean;
+  programme: {
+    title?: string;
+    description?: string;
+    time_start?: string;
+    time_end?: string;
+    URL_IMG?: string;
+  }
 }
-
 export interface ITypeCards {
-  data?: string
-  programmeParse: ITypeData[]
+  data?: string;
+  programmeParse?: ITypeData[];
+  setUrl: Dispatch<SetStateAction<string>>;
 }
