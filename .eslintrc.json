@@ -6,14 +6,13 @@
     "jest": true
   },
   "extends": [
-    "plugin:react/recommended",
     "standard",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/standard",
-    "prettier/react"
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -24,11 +23,36 @@
   "plugins": [
     "react",
     "@typescript-eslint",
+    "eslint-plugin-import-helpers",
     "prettier"
   ],
   "rules": {
+    "import/prefer-default-export": "off",
     "prettier/prettier": "error",
-    "space-before-function-paren": "off",
-    "react/prop-types": "off"
-  }
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/ban-types": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react/no-unknown-property": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser"
 }
