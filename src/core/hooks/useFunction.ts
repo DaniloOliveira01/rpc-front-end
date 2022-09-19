@@ -32,7 +32,10 @@ const useFunction = () => {
   function handleSignIn (e: FormEvent<HTMLFormElement>, email: string, password: string) {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      router.push("/programmes")
+      toast.success("Sucesso, seja bem-vindo(a)!")
+      setTimeout(() => {
+        router.push("/programmes")
+      }, 2000)
     }).catch(() => {
       toast.error("Email ou senha incorreto!")
     })
