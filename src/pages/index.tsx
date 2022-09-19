@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useState } from "react";
 import Image from "next/image";
-import useGet from "../core/hooks/useGet";
+import useGet from "../core/hooks/useFunction";
 import { useRouter } from "next/router";
 
 const Login: NextPage = () => {
