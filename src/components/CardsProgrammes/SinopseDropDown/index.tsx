@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-
 interface ITypeSinopse {
-  sinopse: string | any
+  sinopse: string | undefined
 }
 
 export const Sinopse = ({ sinopse }: ITypeSinopse) => {
