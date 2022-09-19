@@ -6,7 +6,7 @@ import { api } from "../services/api";
 import { auth } from "../services/firebase/firebase";
 import { toast } from "react-toastify"
 
-const useGet = () => {
+const useFunction = () => {
   const router = useRouter();
 
   const getProgramme = async (url: string, setData: Dispatch<SetStateAction<ITypeCards | undefined>>) => {
@@ -55,4 +55,4 @@ const useGet = () => {
   }
 }
 
-export default useGet;
+export default useFunction;
