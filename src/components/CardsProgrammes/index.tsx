@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { ITypeCards } from "../../@types";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { CgMediaLive } from "react-icons/cg"
 import { Sinopse } from "./SinopseDropDown";
 
 export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) => {
+  const newDate = new Date(data ? data : "").toLocaleDateString('pt-BR')
 
-  const newDate = new Date(data).toLocaleDateString('pt-BR')
-
-  function handlePage (nextPage: boolean) {
-    const newNow = new Date(data)
+  const handlePage = (nextPage: boolean) => {
+    const newNow = new Date(data ? data : "")
     if (nextPage) newNow.setDate(newNow.getDate() + 1)
     if (!nextPage) newNow.setDate(newNow.getDate() - 1)
 
@@ -50,17 +50,18 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) =>
               <div className="flex gap-3 items-center">
                 <div className="relative w-[100px] h-[95px]">
                   <Image 
-                    src={item.URL_IMG === null || undefined 
+                    src={item.programme.URL_IMG === null || undefined 
                     ? "/img/layout/logo-rpc.webp" 
-                    : item.URL_IMG} 
+                    : item.programme.URL_IMG} 
                     layout={"fill"} 
-                    objectFit={"contain"} 
+                    objectFit={"contain"}
+                    priority={true}
                   />
                 </div>
                 <h2 className="text-2xl font-semibold text-[#5C5B5B] text-center">
-                  {item.title === null || undefined 
+                  {item.programme.title === null || undefined 
                   ? "Em breve..." 
-                  : item.title}
+                  : item.programme.title}
                 </h2>
               </div>
 
@@ -68,15 +69,21 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) =>
                 <div className="flex flex-col justify-center items-center">
                   <span className="text-sm text-[#4B4B4B]">Horário</span>
                   <div className="bg-[#4E72A8] w-[150px] flex justify-center items-center p-2 text-[#fbfbfb] font-semibold text-xl">
-                    <span>{item.time_start} - {item.time_end}</span>
+                     {item.isLive === true ? (
+                      <span className="flex justify-center items-center gap-2 text-red-600"> 
+                        <CgMediaLive className="animate-pulse" color="red" size={20} /> Ao vivo
+                      </span>
+                     ) : (
+                      <span>{item.programme.time_start} - {item.programme.time_end}</span>
+                     )}
                   </div>
                 </div>
               </article>
             </aside>
             <Sinopse sinopse={
-              item.description === null || undefined 
+              item.programme.description === null || undefined 
               ? "Preparando o seu melhor programa." 
-              : item.description
+              : item.programme.description
               } 
             />
           </article>
