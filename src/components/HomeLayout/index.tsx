@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ITypeCards } from "../../@types";
-import useGet from "../../hooks/useGet";
+import useGet from "../../core/hooks/useGet";
 import { CardsProgrammes } from "../CardsProgrammes";
 
 export const HomeLayout = () => {
