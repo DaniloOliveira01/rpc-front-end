@@ -1,20 +1,24 @@
 import { NextPage } from "next";
 import { useState } from "react";
 import Image from "next/image";
-import useGet from "../core/hooks/useFunction";
 import { useRouter } from "next/router";
+import useFunction from "../core/hooks/useFunction";
+import { useAuth } from "../core/hooks/useAuth";
 
 const Login: NextPage = () => {
-  const { handleSignIn } = useGet();
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const router = useRouter()
+  const { handleSignIn } = useFunction();
+  const { setUser } = useAuth();
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const router = useRouter();
+
   
   return (
     <main className="w-full h-[100vh] flex justify-center items-center">
       <section className="flex justify-center items-center">
         <form className="md:p-10 p-5 flex flex-col justify-center items-center gap-5 border-2 rounded-xl" 
-        onSubmit={(e) => handleSignIn(e, email, password)}>
+        onSubmit={(e) => handleSignIn(e, email, password, setUser)}>
 
           <div className="relative md:w-[200px] md:h-[160px] w-[150px] h-[95px]">
             <Image 

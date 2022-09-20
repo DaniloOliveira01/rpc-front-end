@@ -3,14 +3,20 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 import type { AppProps } from 'next/app'
+import { AuthProvider } from "../core/contexts/authContext";
+import { AnimatePresence } from "framer-motion"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <AnimatePresence mode="wait">
+          <Component {...pageProps} />
+        </AnimatePresence>
+      </AuthProvider>
       <ToastContainer autoClose={10000} />
     </>
-  ) 
+  );
 }
 
-export default MyApp
+export default MyApp;
