@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { ITypeCards } from "../../@types";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { CgMediaLive } from "react-icons/cg"
@@ -46,7 +47,9 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) =>
       <article className="flex flex-col md:justify-start justify-center items-center gap-3 mb-3">
         {programmeParse?.length > 1 ? (
           programmeParse?.map((item, i) => (
-            <article className="md:w-[1000px] w-[300px] bg-[#D9D9D9] flex flex-col" key={i}>
+            <article 
+              className="md:w-[1000px] w-[300px] bg-[#D9D9D9] flex flex-col" 
+              key={i}>
               <aside className="flex md:flex-row flex-col md:justify-between items-center px-2">
                 <div className="flex gap-3 items-center">
                     <div className="relative w-[100px] h-[95px]">
