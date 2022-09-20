@@ -27,11 +27,22 @@ export const ProgrammesLayout = () => {
         </div>
       </header>
 
-      <CardsProgrammes 
-        setUrl={setUrl} 
-        data={data?.data} 
-        programmeParse={data?.programmeParse} 
-      />
+      {data?.programmeParse ? (
+        <CardsProgrammes 
+          setUrl={setUrl} 
+          data={data?.data} 
+          programmeParse={data?.programmeParse} 
+        />
+      ) : (
+        <aside className="relative w-[200px] h-[120px]">
+          <Image 
+            src={"/img/loading.svg"} 
+            layout={"fill"} 
+            objectFit={"contain"} 
+            priority={true} 
+          />
+        </aside>
+      )}
     </main>
   );
 }

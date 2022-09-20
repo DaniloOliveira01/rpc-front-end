@@ -11,6 +11,6 @@ export interface ITypeData {
 }
 export interface ITypeCards {
   data?: string;
-  programmeParse?: ITypeData[];
+  programmeParse: ITypeData[];
   setUrl: Dispatch<SetStateAction<string>>;
 }
