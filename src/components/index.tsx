@@ -1,4 +1,4 @@
-import { HomeLayout } from "./HomeLayout";
+import { ProgrammesLayout } from "./ProgrammesLayout";
 import { CardsProgrammes } from "./CardsProgrammes";
 
-export { HomeLayout, CardsProgrammes }
+export { ProgrammesLayout, CardsProgrammes }
