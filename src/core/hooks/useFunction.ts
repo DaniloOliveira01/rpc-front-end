@@ -36,13 +36,10 @@ const useFunction = () => {
     setAcessToken: Dispatch<SetStateAction<boolean>>
   ) {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      console.log(userCredential)
+    signInWithEmailAndPassword(auth, email, password).then(() => {
       setAcessToken(true)
       toast.success("Sucesso, seja bem-vindo(a)!")
-      setTimeout(() => {
-        router.push("/programmes")
-      }, 2000)
+      return router.push("/programmes")
     }).catch(() => {
       toast.error("Email ou senha incorreto!")
     })
