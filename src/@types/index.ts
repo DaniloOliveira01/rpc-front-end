@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from "react"
-export interface ITypeData {
+import { Dispatch, SetStateAction } from 'react'
+export interface ICardsProps {
   isLive: boolean;
   programme: {
     title?: string;
@@ -9,8 +9,8 @@ export interface ITypeData {
     URL_IMG?: string;
   }
 }
-export interface ITypeCards {
+export interface IFetchProps {
   data?: string;
-  programmeParse: ITypeData[];
+  programmeParse: ICardsProps[];
   setUrl: Dispatch<SetStateAction<string>>;
 }

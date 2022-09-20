@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-interface ITypeSinopse {
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+interface ISinopseProps {
   sinopse: string | undefined
 }
 
-export const Sinopse = ({ sinopse }: ITypeSinopse) => {
+export const Sinopse = ({ sinopse }: ISinopseProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const variants = {

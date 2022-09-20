@@ -1,7 +1,11 @@
-import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import { 
+  createUserWithEmailAndPassword, 
+  sendPasswordResetEmail, 
+  signInWithEmailAndPassword 
+} from "firebase/auth";
 import { useRouter } from "next/router";
 import { Dispatch, FormEvent, SetStateAction } from "react";
-import { ITypeCards } from "../../@types";
+import { IFetchProps } from "../../@types";
 import { api } from "../services/api";
 import { auth } from "../services/firebase/firebase";
 import { toast } from "react-toastify"
@@ -9,7 +13,7 @@ import { toast } from "react-toastify"
 const useFunction = () => {
   const router = useRouter();
 
-  const getProgramme = async (url: string, setData: Dispatch<SetStateAction<ITypeCards | undefined>>) => {
+  const getProgramme = async (url: string, setData: Dispatch<SetStateAction<IFetchProps | undefined>>) => {
     const [mes, dia, ano] = new Date().toLocaleDateString("en-US").split('/')
     const dataFormatted = `${ano}-${mes}-${dia}`
     await api

@@ -1,12 +1,13 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { ITypeCards } from "../../@types";
-import useFunction from "../../core/hooks/useFunction";
-import { CardsProgrammes } from "../CardsProgrammes";
+import { useEffect, useState } from 'react'
+import { IFetchProps } from '../../@types'
+import { CardsProgrammes } from '../CardsProgrammes'
+import Image from 'next/image'
+import useFunction from '../../core/hooks/useFunction'
 
 export const ProgrammesLayout = () => {
-  const [data, setData] = useState<ITypeCards>();
+  const [data, setData] = useState<IFetchProps>()
   const [url, setUrl] = useState<string>("")
+
   const { getProgramme } = useFunction()
 
   useEffect(() => {

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:wght@400;600;700&display=swap");
 
 @tailwind base;
@@ -10,18 +8,6 @@
   --bg-primary: #4E72A8;
   --bg-secondary: #8c8c8c;
 
-  --text-primary: #fbfbfb;
-  --text-secondary: #585858;
-  --red-violet: #aa18a3;
-}
-
-.dark,
-[data-theme="dark"] {
-  --bg-primary: #131416;
-  --bg-secondary: #1c1c1c;
-
-  --text-primary: #fbfbfb;
-  --text-secondary: #dedede;
 }
 
 html,

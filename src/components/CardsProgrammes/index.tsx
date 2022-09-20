@@ -1,12 +1,11 @@
-import Image from "next/image";
+import { IFetchProps } from '../../@types'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import { CgMediaLive } from 'react-icons/cg'
+import { Sinopse } from './SinopseDropDown'
+import Image from 'next/image'
 
-import { ITypeCards } from "../../@types";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { CgMediaLive } from "react-icons/cg"
-import { Sinopse } from "./SinopseDropDown";
-
-export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) => {
-  const newDate = new Date(data ? data : "").toLocaleDateString('pt-BR')
+export const CardsProgrammes = ({ data, setUrl, programmeParse }: IFetchProps) => {
+  const dateNow = new Date(data ? data : "").toLocaleDateString('pt-BR')
 
   const handlePage = (nextPage: boolean) => {
     const newNow = new Date(data ? data : "")
@@ -33,7 +32,7 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) =>
         />
 
           <span className="text-[#fbfbfb] text-xl">
-            {newDate}
+            {dateNow}
           </span>
         
         <AiOutlineArrowRight
@@ -63,7 +62,7 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: ITypeCards) =>
                 </div>
                 <h2 className="text-2xl font-semibold text-[#5C5B5B] text-center">
                   {item.programme.title === null || undefined 
-                  ? "Em breve..." 
+                  ? "Coming soon!" 
                   : item.programme.title}
                 </h2>
               </div>
