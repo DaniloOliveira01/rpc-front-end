@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   const { user } = useAuth();
 
   return (
-    <Fragment >
+    <Fragment>
       {!user ? (
         <Login />
         ) : (
