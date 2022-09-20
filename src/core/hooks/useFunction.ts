@@ -29,9 +29,16 @@ const useFunction = () => {
     })
   }
 
-  function handleSignIn (e: FormEvent<HTMLFormElement>, email: string, password: string) {
+  function handleSignIn (
+    e: FormEvent<HTMLFormElement>, 
+    email: string, 
+    password: string, 
+    setAcessToken: Dispatch<SetStateAction<boolean>>
+  ) {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      console.log(userCredential)
+      setAcessToken(true)
       toast.success("Sucesso, seja bem-vindo(a)!")
       setTimeout(() => {
         router.push("/programmes")

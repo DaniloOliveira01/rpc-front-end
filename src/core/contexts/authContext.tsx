@@ -1,16 +1,28 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
+import { IUserProps } from '../../@types';
 
 export const AuthContext = createContext({} as AuthContextType) 
 
-type User = {
-  email: string;
-  password: string;
-}
-
 type AuthContextType = {
-  user: User | undefined;
+  user: boolean;
+  setUser: Dispatch<SetStateAction<boolean>>;
 }
 
-// export function AuthContextProvider(children: ReactNode) {
-//   return <AuthContext.Provider>{children}</AuthContext.Provider>
-// }
+type AuthProviderProps = {
+  children: ReactNode;
+};
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
+  const [user, setUser] = useState<boolean>(false);
+
+  return (
+    <AuthContext.Provider
+      value={{
+        setUser,
+        user,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
