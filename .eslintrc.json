@@ -25,7 +25,7 @@
     ],
     "rules": {
       "import/prefer-default-export": "off",
-      "prettier/prettier": "error",
+      "prettier/prettier": "off",
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/ban-types": "off",
       "no-unused-vars": "off",
@@ -35,7 +35,7 @@
       "@typescript-eslint/no-non-null-assertion": "off",
       "react/no-unknown-property": "off",
       "import-helpers/order-imports": [
-        "warn",
+        "off",
         {
           "newlinesBetween": "always",
           "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],

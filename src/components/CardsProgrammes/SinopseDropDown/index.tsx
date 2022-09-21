@@ -21,16 +21,16 @@ export const Sinopse = ({ sinopse }: ISinopseProps) => {
       <span className="flex px-2 items-center text-xl text-[#5C5B5B] hover:underline">
         Sinopse:
         {!isOpen ? (
-          <MdKeyboardArrowDown 
-            className="cursor-pointer" 
-            size={20} 
-            color="#4E72A8" 
+          <MdKeyboardArrowDown
+            className="cursor-pointer"
+            size={20}
+            color="#4E72A8"
           />
         ) : (
-          <MdKeyboardArrowUp 
-            className="cursor-pointer" 
-            size={20} 
-            color="#4E72A8" 
+          <MdKeyboardArrowUp
+            className="cursor-pointer"
+            size={20}
+            color="#4E72A8"
           />
         )}
       </span>
