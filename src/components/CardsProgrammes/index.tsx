@@ -52,7 +52,7 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: IFetchProps) =
               <div className="flex items-center gap-3">
                 <div className="relative w-[100px] h-[95px]">
                   <Image 
-                    src={item.programme.URL_IMG === null || undefined 
+                    src={!item.programme.URL_IMG 
                     ? "/img/layout/logo-rpc.webp" 
                     : item.programme.URL_IMG} 
                     layout={"fill"} 
