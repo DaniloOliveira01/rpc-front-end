@@ -1,4 +1,4 @@
-## RPC - Progamação
+## RPC - Progamação - https://front-end-rpc-deploy.vercel.app/
 
 #### Para quê serve?
 - Aplicação criada com intuito de mostrar ao usuário a grade de programação diária da RPC - Rede Globo!
@@ -16,7 +16,7 @@
 - Axios
 - Firebase v9 (funções de login)
 
-#### Como rodar aplicação?
+#### Como rodar aplicação no meu pc?
 - Clone o projeto: `git clone https://github.com/DaniloOliveirasx/rpc-front-end.git`;
 - Instale as depêndencias: `yarn or npm i`
 - Rode o projeto no terminal: `yarn dev`
