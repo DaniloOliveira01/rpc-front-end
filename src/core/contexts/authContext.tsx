@@ -1,7 +1,5 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react'
 
-export const AuthContext = createContext({} as AuthContextType) 
-
 type AuthContextType = {
   user: boolean
   setUser: Dispatch<SetStateAction<boolean>>
@@ -10,6 +8,8 @@ type AuthContextType = {
 type AuthProviderProps = {
   children: ReactNode
 };
+export const AuthContext = createContext({} as AuthContextType)
+
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<boolean>(false)
