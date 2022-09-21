@@ -18,7 +18,7 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: IFetchProps) =
   }
 
   return (
-    <section className="flex flex-col justify-center items-center font-bold p-5">
+    <main className='flex flex-col justify-center items-center p-5'>
       <h1 className="text-[#fbfbfb] text-center md:text-4xl text-2xl mb-5">
         Confira nossa programação completa:
       </h1>
@@ -43,13 +43,13 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: IFetchProps) =
         />
       </aside>
 
-      <article className="flex flex-col md:justify-start justify-center items-center gap-3 mb-3">
+      <article className="flex flex-col justify-center items-center gap-2 mb-2">
         {programmeParse?.map((item, i) => (
           <article 
-            className="md:w-[1000px] w-[300px] bg-[#D9D9D9] flex flex-col" 
+            className="md:w-[800px] w-[300px] bg-[#D9D9D9] flex flex-col" 
             key={i}>
             <aside className="flex md:flex-row flex-col md:justify-between items-center px-2">
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <div className="relative w-[100px] h-[95px]">
                   <Image 
                     src={item.programme.URL_IMG === null || undefined 
@@ -92,6 +92,6 @@ export const CardsProgrammes = ({ data, setUrl, programmeParse }: IFetchProps) =
           </article>
         ))}
       </article>
-    </section>
+    </main>
   );
 }

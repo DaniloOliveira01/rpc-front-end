@@ -16,7 +16,7 @@ export const ProgrammesLayout = () => {
 
   return (
     <main className="w-[100%] flex flex-col justify-center items-center">
-      <header className="bg-[#FAFAFA] px-6 w-[100%] flex flex-col justify-center items-center">
+      <header className="bg-[#FAFAFA] w-[100%] flex flex-col justify-center items-center px-6">
         <div className="relative w-[200px] h-[95px]">
           <Image 
             src={"/img/layout/logo-rpc.webp"} 
