@@ -20,3 +20,5 @@
 - Clone o projeto: `git clone https://github.com/DaniloOliveirasx/rpc-front-end.git`;
 - Instale as depêndencias: `yarn or npm i`
 - Rode o projeto no terminal: `yarn dev`
+
+###### By: Danilo Oliveira
